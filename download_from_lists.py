@@ -14,7 +14,7 @@ def get_jobs():
     jobs = []
     for filename in args.file:
         srcfile = os.path.splitext(os.path.basename(filename))[0]
-        with open(filename) as infp:
+        with open(filename, encoding="utf-8") as infp:
             for emoji in json.load(infp):
                 ext = os.path.splitext(emoji["url"])[1]
                 name = emoji["name"]
