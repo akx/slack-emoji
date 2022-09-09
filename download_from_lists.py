@@ -27,7 +27,7 @@ def download_job(job):
         return
     os.makedirs(os.path.dirname(job["dest"]), exist_ok=True)
     print(job["dest"])
-    resp = requests.get(job["src"])
+    resp = sess.get(job["src"])
     resp.raise_for_status()
     with open(job["dest"], "wb") as outf:
         outf.write(resp.content)
