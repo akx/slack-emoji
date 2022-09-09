@@ -14,9 +14,10 @@ Getting emoji JSON
 Downloading emoji from the JSON
 -------------------------------
 
-* In a Python 3 virtualenv (setting one up is beyond the scope of this document)
-  with the `requests` package installed, 
-  run `python3 download_from_lists.py myworkspace.json`.  Multiple JSON filenames
-  are accepted.
+* Run `python3 download_from_lists.py myworkspace.json` using Python 3.6 or newer. 
+  Multiple JSON filenames are accepted.
 * The script downloads all emoji described in the given JSON file into a directory named by
   the file's name, i.e. `myworkspace/partyparrot.gif`, etc.
+
+The `download_from_lists.py` script works faster if you have `requests` installed.
+It will fall back to `curl` otherwise.
