@@ -14,7 +14,9 @@ except ImportError:
     sess = None
     curl = shutil.which("curl")
     if not curl:
-        raise RuntimeError("Please install the Python requests package, or have curl on your path")
+        raise RuntimeError(
+            "Please install the Python requests package, or have curl on your path"
+        )
     print(f"Using {curl} for downloads.")
 
 
