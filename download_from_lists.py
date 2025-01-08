@@ -1,3 +1,6 @@
+# /// script
+# dependencies = ["httpx"]
+# ///
 import argparse
 import json
 import os
@@ -6,16 +9,16 @@ import subprocess
 from multiprocessing.dummy import Pool as ThreadPool
 
 try:
-    import requests
+    import httpx
 
-    sess = requests.Session()
-    print("Using requests for downloads.")
+    sess = httpx.Client()
+    print("Using httpx for downloads.")
 except ImportError:
     sess = None
     curl = shutil.which("curl")
     if not curl:
         raise RuntimeError(
-            "Please install the Python requests package, or have curl on your path"
+            "Please install the Python `httpx` package, or have curl on your path"
         )
     print(f"Using {curl} for downloads.")
 
